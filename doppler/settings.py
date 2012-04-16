@@ -45,6 +45,7 @@ PROJECT_APPS = (
     'news',
     'flatpages',
     'portfolio',
+    'doppler',
 )
 
 MIDDLEWARE_CLASSES = (

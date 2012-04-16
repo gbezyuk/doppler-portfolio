@@ -4,6 +4,8 @@ from django_any import any_model
 from portfolio.models import Work
 from django_webtest import WebTest
 
+from doppler.tests import IndexPageTest
+
 class WorkPublicationTest(WebTest):
 
     def setUp(self):
