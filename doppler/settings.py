@@ -42,7 +42,9 @@ INSTALLED_APPS = (
 )
 
 PROJECT_APPS = (
-    'doppler.portfolio',
+    'news',
+    'flatpages',
+    'portfolio',
 )
 
 MIDDLEWARE_CLASSES = (
