@@ -1,0 +1,9 @@
+- load i18n
+%ul.nav.nav-pills
+	-#%li
+	-#	%a{'href': '#top'}
+	-#		{% trans "to page top" %}
+	- for action in actions
+		%li
+			%a{'href': '{{ action.url }}'}
+				= action.title

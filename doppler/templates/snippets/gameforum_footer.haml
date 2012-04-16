@@ -1,0 +1,10 @@
+%table.gameforum_footer.table.table-striped.table-bordered.table-condensed
+	%tbody
+		%tr
+			%td.game_menu
+				- with show_top_link=True
+					- include 'snippets/gameforum_actions_menu.haml'
+		%tr
+			%td.banner
+				- if game.bottom_banner
+					<img src="{{ game.bottom_banner.url }}" height="180" width="800">

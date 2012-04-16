@@ -1,0 +1,22 @@
+- extends 'base.haml'
+- load i18n
+
+- block caption
+	= flatpage.title
+
+- block breadcrumbs
+	%ul.breadcrumb
+		%li
+			- include 'home_link.haml'
+		%li
+			%a{'href': '{% url flatpages %}'}
+				{% trans "Flatpages" %}
+		%li
+			%a{'href': '{{ flatpage.get_absolute_url }}'}
+				= flatpage.title
+
+- block content
+	= flatpage.content
+
+- block flatpages_link_class
+	active

@@ -1,0 +1,12 @@
+- if post
+	%a{'href': '/games/{{ post.thread.room.game.id }}/{{ post.thread.room.id }}/{{ post.thread.id }}/?page=last#post_{{ post.id }}'}
+		-#= post
+		>>>
+		%br
+		= post.created_at
+	%br
+		- if not plot_mode
+			%a{'href': '/games/{{ game.id }}/characters/{{ post.author.id }}/'}
+				= post.author
+		- else
+			= post.author

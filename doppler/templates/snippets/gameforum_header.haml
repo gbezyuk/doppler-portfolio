@@ -1,0 +1,17 @@
+%table.gameforum_header.table.table-striped.table-bordered.table-condensed
+	%tbody
+		%tr
+			- if thread and thread.name or room and room.name
+				- if thread and thread.name
+					%th.thread_name
+						= thread.name
+				- else
+					%th.room_name
+						= room.name
+			- else
+				%td.banner
+					- if game.top_banner
+						<img src="{{ game.top_banner.url }}" height="180" width="800">
+		%tr
+			%td.game_menu
+				- include 'snippets/gameforum_actions_menu.haml'

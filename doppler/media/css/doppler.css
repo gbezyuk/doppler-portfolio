@@ -1,0 +1,35 @@
+ul.breadcrumb li:after {
+	content: ' /';
+}
+ul.breadcrumb li:last-child:after {
+	content: none;
+}
+
+body {
+	padding-top: 60px;
+}
+
+.form-horizontal input,
+.form-horizontal textarea,
+.form-horizontal select,
+.form-horizontal .uneditable-input {
+	width: 600px;
+}
+
+form .required label {
+	font-weight: bold;
+}
+	form .required label:after {
+		content: '*';
+	}
+
+h1,
+h2,
+h3,
+h4,
+.breadcrumb li a,
+table th,
+button,
+.btn {
+	text-transform: capitalize;
+}

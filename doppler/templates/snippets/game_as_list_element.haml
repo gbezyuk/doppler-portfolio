@@ -1,0 +1,11 @@
+%tr
+	%td
+		%a{'href':'{% url games:game game.id %}'}
+			= game
+	%td
+		%a{'href':'{% url plots:plot_details game.plot.id %}'}
+			= game.plot
+	%td
+		= game.short_comment
+	%td
+		= game.status_as_text

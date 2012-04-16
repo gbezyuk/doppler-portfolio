@@ -1,0 +1,163 @@
+- extends 'base.haml'
+- load i18n
+
+- block breadcrumbs
+	%ul.breadcrumb
+		%li
+			- include 'home_link.haml'
+
+- block content
+	%div.hero-unit
+		%h1
+			- include 'home_link.haml'
+		%h2
+			{% trans "Alpha 1" %}
+		.progress.progress-striped.active
+			.bar{'style': 'width: 80%;'}
+		%table.table.table-striped.table-bordered.table-condensed
+			%thead
+				%tr
+					%th
+						{% trans "Component" %}
+					%th
+						{% trans "Status" %}
+					%th
+						{% trans "Progress" %}
+			%tbody
+				%tr
+					%td
+						%a{'href': '/'}
+							{% trans "Basic (Mobile version) layout" %}
+					%td
+						{% trans "Done" %}
+					%td
+						100%
+				%tr
+					%td
+						%a{'data-toggle': 'modal', 'href': '#loginModal'}
+							{% trans "Authorization" %}
+					%td
+						{% trans "Done" %}
+					%td
+						100%
+				-#%tr
+				-#	%td
+				-#		%a{'data-toggle': 'modal', 'href': '#loginModal'}
+				-#			{% trans "Registration" %}
+				-#	%td
+				-#		{% trans "Done" %}
+				-#	%td
+				-#		100%
+				%tr
+					%td
+						%a{'href': '{% url flatpages %}'}
+							{% trans "Flatpages" %}
+					%td
+						{% trans "Done" %}
+					%td
+						100%
+				%tr
+					%td
+						%a{'href': '{% url news:list %}'}
+							{% trans "News" %}
+					%td
+						{% trans "Done" %}
+					%td
+						100%
+				%tr
+					%td
+						%a{'href': '{% url portfolio:work_list %}'}
+							{% trans "Portfolio" %}
+					%td
+						{% trans "In progress" %}
+					%td
+						20%
+				%tr
+					%td
+						-#%a{'href': '{% url pm:index %}'}
+						{% trans "Cleanup" %}
+					%td
+						{% trans "Not started" %}
+					%td
+						100%
+				-#%tr
+				-#	%td
+				-#		%a{'href': '{% url pm:index %}'}
+				-#			{% trans "Private messages" %}
+				-#	%td
+				-#		{% trans "Done" %}
+				-#	%td
+				-#		100%
+				-#%tr
+				-#	%td
+				-#		%a{'href': '{% url plots:index %}'}
+				-#			{% trans "Plots" %}
+				-#	%td
+				-#		{% trans "Done" %}
+				-#	%td
+				-#		95%
+				-#%tr
+				-#	%td
+				-#		%a{'href': '{% url games:index %}'}
+				-#			{% trans "Games" %}
+				-#	%td
+				-#		{% trans "Done" %}
+				-#	%td
+				-#		95%
+				-#%tr
+				-#	%td
+				-#		%a{'href': '{% url profile %}'}
+				-#			{% trans "User profiles" %}
+				-#	%td
+				-#		{% trans "In progress" %}
+				-#	%td
+				-#		30%
+				-#%tr
+				-#	%td
+				-#		%a{'href': '{% url forum:index %}'}
+				-#			{% trans "Forums" %}
+				-#	%td
+				-#		{% trans "In progress" %}
+				-#	%td
+				-#		20%
+				-#%tr
+				-#	%td
+				-#		{% trans "Translation" %}
+				-#	%td
+				-#		{% trans "In progress" %}
+				-#	%td
+				-#		80%
+				-#%tr
+				-#	%td
+				-#		{% trans "Theming" %}
+				-#	%td
+				-#		{% trans "not started yet" %}
+				-#	%td
+				-#		0%
+				-#%tr
+				-#	%td
+				-#		{% trans "Database migration" %}
+				-#	%td
+				-#		{% trans "not started yet" %}
+				-#	%td
+				-#		0%
+
+	%h2 {% trans "flatpages" %}
+	%ul.nav.nav-pills
+		- for flatpage in flatpages
+			- if flatpage.show_on_home
+				%li
+					%a{'href': '{{flatpage.url}}'}
+						= flatpage.title
+	%a{'href': '{% url news:list %}'}
+		%h2 {% trans "News" %}
+	%ul.unstyled
+		- for news_item in news
+			%li
+				%a{'href': '{{ news_item.get_absolute_url }}'}
+					%h2.caption
+						= news_item.caption
+				%time{'datetime': '{{ news_item.published_at }}', 'pubdate': 'pubdate'}
+					{{ news_item.published_at }}
+				%p
+					{{ news_item.announcement|safe }}

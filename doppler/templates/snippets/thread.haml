@@ -1,0 +1,58 @@
+- load i18n
+- load fb_versions
+- load gameforum
+- load pagination_tags
+
+- autopaginate posts 10
+- paginate
+
+%table.table.table-striped.table-bordered.table-condensed.forum.game_forum.thread
+	%thead
+		%tr.post_list
+			%th
+				{% trans "author" %}
+			%th
+				{% trans "message" %}
+		%tr
+			%td.author
+				- if thread.author.avatar.image and thread.author.avatar.image.path
+					.img_container
+						%a{'href': '{{ thread.autor.avatar.image.url }}'}
+							%img.version200x200{'src': '{% version thread.author.avatar.image.path "200x200" %}'}
+				- if not plot_mode
+					%a{'href': '{% url games:character game.id thread.author.id %}'}
+						= thread.author
+
+					%a{'href': '{% url games:favorite_thread game.id room.id thread.id %}', 'class': 'favorite_link ajax_link {% if thread|is_favorite:request.user %}active{% endif %}'}
+						%span.active_text {% trans 'unmake favorite' %}
+						%span.passive_text {% trans 'make favorite' %}
+					- if thread.author.show_trust_marks
+						- with character=thread.author
+							- include 'snippets/character_trust_form.haml'
+				- else
+					= thread.author
+			%td.post
+				.post_wrapper
+					%a{'name': 'thread'}
+					= thread.body|safe
+
+					- if not plot_mode and thread.is_poll
+						- with poll=thread
+							- include 'snippets/poll.haml'
+
+					%ul.actions
+						- if plot_mode
+							%li.edit_thread
+								%a{'href': '{% url plots:edit_thread plot.id variation.id room.id thread.id %}'}
+									{% trans "edit thread" %}
+						- else
+							- if edit_thread
+								%li.edit_thread
+									%a{'href': '{% url games:edit_thread game.id room.id thread.id %}'}
+										{% trans "edit thread" %}
+	%tbody
+
+		- for post in posts
+			- include 'snippets/post.haml'
+
+- paginate

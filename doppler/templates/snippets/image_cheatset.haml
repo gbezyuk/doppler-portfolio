@@ -1,0 +1,34 @@
+- load fb_versions
+- load i18n
+
+%table.avatar_cheatset_info.table.table-striped.table-bordered.table-condensed
+	%tbody
+		%tr
+			%th.avatar{'rowspan':'5'}
+				.img_container
+					%img.version200x200{'src': '{% version image.path "200x200" %}'}
+
+			%td {% trans "full size" %}:
+			%td
+				%a{'href': '{{ image.url }}', 'target': '_blank'}
+					= image.url
+		%tr
+			%td 40x40
+			%td
+				%a{'href': '{% version image.path "40x40" %}', 'target': '_blank'}
+					- version image.path '40x40'
+		%tr
+			%td 80x80
+			%td
+				%a{'href': '{% version image.path "80x80" %}', 'target': '_blank'}
+					- version image.path '80x80'
+		%tr
+			%td 200x200
+			%td
+				%a{'href': '{% version image.path "200x200" %}', 'target': '_blank'}
+					- version image.path '200x200'
+		%tr
+			%td 320x320
+			%td
+				%a{'href': '{% version image.path "320x320" %}', 'target': '_blank'}
+					- version image.path '320x320'

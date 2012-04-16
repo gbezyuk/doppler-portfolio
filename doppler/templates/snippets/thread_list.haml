@@ -1,0 +1,62 @@
+- load i18n
+- load gameforum
+
+%table.forum.game_forum.room.table.table-striped.table-bordered.table-condensed
+	%thead
+		%tr.thread_list
+			%th
+			%th {% trans "thread" %}
+			%th {% trans "author" %}
+			%th {% trans "posts count" %}
+			%th {% trans "latest post" %}
+	%tbody
+		- for thread in threads
+			%tr{'style':'background-color: {{ thread.color }};'}
+				%td.service.status
+					- if not plot_mode
+						- if thread.is_closed
+							%span.is_closed
+								{% trans "is closed" %}
+						- else
+							- if not thread|is_read:request.user
+								%a{'href':'{{ thread|get_first_unread_post_link:request.user }}'}
+									%span.is_unread
+										{% trans "is unread" %}
+							- else
+								%span.is_read
+									{% trans "is read" %}
+				%td.essence
+					- if plot_mode
+						%a{'href': '{% url plots:thread plot.id variation.id room.id thread.id %}'}
+							= thread.name
+					- else
+						%a{'href': '{% url games:thread game.id room.id thread.id %}'}
+							= thread.name
+					- if plot_mode
+						%ul.actions
+							%li.edit_thread
+								%a{'href': '{% url plots:edit_thread plot.id variation.id room.id thread.id %}'}
+									{% trans "edit thread" %}
+					- else
+						- if thread|check_edit_permission:request.user
+							%ul.actions
+								%li.edit_thread
+									%a{'href': '{% url games:edit_thread game.id room.id thread.id %}'}
+										{% trans "edit thread" %}
+				%td.service
+					- if not plot_mode
+						%a{'href': '{% url games:character game.id thread.author.id %}'}
+							= thread.author
+					- else
+						= thread.author
+				%td.service
+					- if not plot_mode
+						= thread.posts.count
+					- else
+						= thread.posts.count
+				%td.service
+					- if not plot_mode
+						- with post=thread.latest_post
+							- include 'snippets/latest_post.haml'
+					- else
+						= thread.latest_post
