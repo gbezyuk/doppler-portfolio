@@ -125,11 +125,11 @@ FILEBROWSER_VERSIONS = {
 		'height':           80,
 		'opts':             'crop',
 	},
-	'200x200': {
-		'verbose_name':     u'200x200',
-		'width':            200,
-		'height':           200,
-		'opts':             '',
+	'220x220': {
+		'verbose_name':     u'220x220',
+		'width':            220,
+		'height':           220,
+		'opts':             'crop',
 	},
 	'800x800': {
 		'verbose_name':     u'800x800',
@@ -142,7 +142,7 @@ FILEBROWSER_VERSIONS = {
 FILEBROWSER_ADMIN_VERSIONS = [
 	'40x40',
 	'80x80',
-	'200x200',
+	'220x220',
 	'800x800',
 ]
 

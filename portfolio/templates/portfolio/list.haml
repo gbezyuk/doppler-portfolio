@@ -17,7 +17,13 @@
 		- for work in works
 			%li
 				%a{'href': '{{ work.get_absolute_url }}'}
-					= work
+					%h2
+						= work.title
+					.slider
+						- with images=work.images.all
+							- load fb_versions
+							- for attached_image in images
+								%img{'alt':'{{ attached_image.title }}', 'title': '{{ attached_image.title }}', 'src': '{% version attached_image.image.path "220x220" %}'}
 
 - block portfolio_link_class
 	active

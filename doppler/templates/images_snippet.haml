@@ -4,5 +4,5 @@
 		- for attached_image in images
 			- with image=attached_image.image
 				%li
-					%a.thumbnail{'href': '{% version image.path "1000x1000" %}'}
-						%img.version200x200{'alt':'{{ attached_image.title }}', 'title': '{{ attached_image.title }}', 'src': '{% version image.path "200x200" %}'}
+					%a.thumbnail{'class': 'version version{{size}}', 'href': '{% if href_version_size %}{% version image.path href_version_size %}{% else %}{{ image.url }}{% endif %}'}
+						%img{'alt':'{{ attached_image.title }}', 'title': '{{ attached_image.title }}', 'src': '{% version image.path size %}'}

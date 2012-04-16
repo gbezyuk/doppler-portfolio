@@ -16,7 +16,11 @@
 	= work.title
 
 - block content
-	= work.description|safe
+	.description
+		= work.description|safe
+	- with images=work.images.all
+		- with size='220x220' href_version_size='800x800'
+			- include 'images_snippet.haml'
 
 - block portfolio_link_class
 	active

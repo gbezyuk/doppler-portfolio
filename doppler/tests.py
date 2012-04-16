@@ -4,7 +4,7 @@ class IndexPageTest(WebTest):
 
     def test_index_view(self):
         """
-        Test index page opens
+        Test index page opens with Http 200 OK status
         """
         index_page = self.app.get('/')
-        self.assertIn('breadcrumb', index_page)
+        self.assertEqual(index_page.status, '200 OK')

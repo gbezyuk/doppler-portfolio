@@ -69,13 +69,21 @@
 						%a{'href': '{% url portfolio_work_list %}'}
 							{% trans "Portfolio" %}
 					%td
-						{% trans "In progress" %}
+						{% trans "Polishing" %}
 					%td
-						20%
+						80%
 				%tr
 					%td
 						-#%a{'href': '{% url pm:index %}'}
 						{% trans "Cleanup" %}
+					%td
+						{% trans "Not started" %}
+					%td
+						0%
+				%tr
+					%td
+						-#%a{'href': '{% url pm:index %}'}
+						{% trans "Translation" %}
 					%td
 						{% trans "Not started" %}
 					%td

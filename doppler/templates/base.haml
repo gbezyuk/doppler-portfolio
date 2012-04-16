@@ -6,16 +6,17 @@
 - block sitewide_styles
 	%link{'rel': 'stylesheet', 'href':'{{ MEDIA_URL }}twitter_bootstrap/css/bootstrap.css', 'type': 'text/css'}
 	%link{'rel': 'stylesheet', 'href':'{{ MEDIA_URL }}jquery-lightbox/css/jquery.lightbox-0.5.css', 'type': 'text/css'}
-	%link{'rel': 'stylesheet', 'href':'{{ MEDIA_URL }}bootstrap-wysihtml5/src/bootstrap-wysihtml5.css', 'type': 'text/css'}
+	-#%link{'rel': 'stylesheet', 'href':'{{ MEDIA_URL }}bootstrap-wysihtml5/src/bootstrap-wysihtml5.css', 'type': 'text/css'}
 	%link{'rel': 'stylesheet', 'href':'{{ MEDIA_URL }}css/doppler.css', 'type': 'text/css'}
 
 - block sitewide_scripts
 	%script{'type': 'text/javascript', 'src': '{{ MEDIA_URL }}js/jquery-1.7.1.js'}
 	%script{'type': 'text/javascript', 'src': '{{ MEDIA_URL }}twitter_bootstrap/js/bootstrap.js'}
 	%script{'type': 'text/javascript', 'src': '{{ MEDIA_URL }}jquery-lightbox/js/jquery.lightbox-0.5.js'}
-	%script{'type': 'text/javascript', 'src': '{{ MEDIA_URL }}bootstrap-wysihtml5/lib/js/wysihtml5-0.3.0_rc2.js'}
-	%script{'type': 'text/javascript', 'src': '{{ MEDIA_URL }}bootstrap-wysihtml5/lib/js/prettify.js'}
-	%script{'type': 'text/javascript', 'src': '{{ MEDIA_URL }}bootstrap-wysihtml5/src/bootstrap-wysihtml5.js'}
+	%script{'type': 'text/javascript', 'src': '{{ MEDIA_URL }}js/jquery.transit.js'}
+	-#%script{'type': 'text/javascript', 'src': '{{ MEDIA_URL }}bootstrap-wysihtml5/lib/js/wysihtml5-0.3.0_rc2.js'}
+	-#%script{'type': 'text/javascript', 'src': '{{ MEDIA_URL }}bootstrap-wysihtml5/lib/js/prettify.js'}
+	-#%script{'type': 'text/javascript', 'src': '{{ MEDIA_URL }}bootstrap-wysihtml5/src/bootstrap-wysihtml5.js'}
 	%script{'type': 'text/javascript', 'src': '{{ MEDIA_URL }}js/global.js'}
 
 - block body

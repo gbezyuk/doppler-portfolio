@@ -36,7 +36,7 @@ class Work(models.Model):
 
 	@models.permalink
 	def get_absolute_url(self):
-		return ('portfolio:work_detail', (), { 'work_id': self.pk })
+		return ('portfolio_work_details', (), { 'work_id': self.pk })
 
 	@classmethod
 	def get_published_works(cls):
