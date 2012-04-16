@@ -9,14 +9,14 @@
 			%a{'href': '{% url portfolio:work_list %}'}
 				{% trans "Portfolio" %}
 		%li
-			%a{'href': '{% url portfolio:work_details %}'}
+			%a{'href': '{% url portfolio:work_details work.pk %}'}
 				= work.title
 
 - block caption
 	= work.title
 
 - block content
-	= work
+	= work.description|safe
 
 - block portfolio_link_class
 	active

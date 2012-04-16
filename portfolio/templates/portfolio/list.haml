@@ -13,7 +13,11 @@
 	{% trans "Portfolio" %}
 
 - block content
-	= works
+	%ul.works.unstyled
+		- for work in works
+			%li
+				%a{'href': '{% url portfolio:work_details work.pk %}'}
+					= work.title
 
 - block portfolio_link_class
 	active
