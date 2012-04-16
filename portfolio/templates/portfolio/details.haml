@@ -6,10 +6,10 @@
 		%li
 			- include 'home_link.haml'
 		%li
-			%a{'href': '{% url portfolio:work_list %}'}
+			%a{'href': '{% url portfolio_work_list %}'}
 				{% trans "Portfolio" %}
 		%li
-			%a{'href': '{% url portfolio:work_details work.pk %}'}
+			%a{'href': '{{ work.get_absolute_url }}'}
 				= work.title
 
 - block caption

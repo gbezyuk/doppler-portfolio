@@ -6,7 +6,7 @@
 		%li
 			- include 'home_link.haml'
 		%li
-			%a{'href': '{% url portfolio:work_list %}'}
+			%a{'href': '{% url portfolio_work_list %}'}
 				{% trans "Portfolio" %}
 
 - block caption
@@ -16,8 +16,8 @@
 	%ul.works.unstyled
 		- for work in works
 			%li
-				%a{'href': '{% url portfolio:work_details work.pk %}'}
-					= work.title
+				%a{'href': '{{ work.get_absolute_url }}'}
+					= work
 
 - block portfolio_link_class
 	active

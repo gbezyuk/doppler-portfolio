@@ -5,6 +5,9 @@ from filebrowser.sites import site
 from django.conf import settings
 admin.autodiscover()
 
+handler404 = ViewFor404.as_view()
+handler500 = ViewFor500.as_view()
+
 urlpatterns = patterns('',
 #    Examples:
 #    url(r'^$', 'tulius.views.home', name='home'),
@@ -21,7 +24,7 @@ urlpatterns = patterns('',
 
 	url(r'^$', HomeView.as_view(), name='home'),
     url(r'^news/', include('news.urls',  namespace='news')),
-    url(r'^portfolio/', include('portfolio.urls',  namespace='portfolio')),
+    url(r'^portfolio/', include('portfolio.urls',)),
     url(r'^flatpages/', 'flatpages.views.list',  name='flatpages'),
 #	url(r'^plots/', include('tulius.plots.urls',  namespace='plots')),
 #	url(r'^games/', include('tulius.games.urls',  namespace='games')),
