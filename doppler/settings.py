@@ -32,7 +32,7 @@ INSTALLED_APPS = (
     'accounts',
 #    'accounts.registration',
     'pagination',
-    'flatpages',
+   'flatpages',
     'news',
 
     'doppler',
@@ -152,3 +152,8 @@ FILEBROWSER_SEARCH_TRAVERSE = True
 FILEBROWSER_DEFAULT_PERMISSIONS = 0755
 FILEBROWSER_IMAGE_MAXBLOCK = 1024*1024*32
 FILEBROWSER_URL_TINYMCE = '/static/grappelli/tinymce/jscripts/tiny_mce/'
+
+import os
+BASE_PATH = os.path.dirname(os.path.dirname(__file__))
+TEST_DISCOVERY_ROOT = os.path.join(BASE_PATH, 'doppler/tests')
+TEST_RUNNER = "doppler.tests.runner.DiscoveryDjangoTestSuiteRunner"
