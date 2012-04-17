@@ -1,6 +1,6 @@
 from django.contrib import admin
-from flatpages.models import FlatPage
-from flatpages.forms import FlatpageAdminForm
+from .models import FlatPage
+from .forms import FlatpageAdminForm
 
 class FlatPageAdmin(admin.ModelAdmin):
 	form = FlatpageAdminForm

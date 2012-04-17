@@ -1,4 +1,4 @@
-from flatpages.models import FlatPage
+from .models import FlatPage
 from django.template import loader, RequestContext
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
