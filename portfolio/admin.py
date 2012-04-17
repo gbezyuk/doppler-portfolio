@@ -1,6 +1,6 @@
 from django.utils.translation import ugettext_lazy as _
 from django.contrib import admin
-from portfolio.models import Work, Image
+from .models import Work, Image
 from django.conf import settings
 import os
 from filebrowser.base import FileObject

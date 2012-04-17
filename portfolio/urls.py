@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import patterns, include, url
-from portfolio.views import *
+from .views import *
 
 urlpatterns = patterns('',
     url(r'^$', work_list, name='portfolio_work_list'),

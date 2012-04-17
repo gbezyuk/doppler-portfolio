@@ -1,6 +1,6 @@
 from django.views.generic.simple import direct_to_template
 from django.shortcuts import get_object_or_404
-from portfolio.models import Work
+from .models import Work
 
 def work_list(request, template_name='portfolio/list.haml'):
     """Work list view"""
