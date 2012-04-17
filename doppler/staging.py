@@ -13,7 +13,7 @@ EMAIL_FILE_PATH = PROJECT_ROOT +  'mail_dump/'
 DATABASES = {
 	'default': {
 		'ENGINE': 'django.db.backends.sqlite3',
-		'NAME': PROJECT_ROOT + 'doppler_dev.sqlite3',
+		'NAME': PROJECT_ROOT + 'staging.sqlite3',
 	}
 }
 
