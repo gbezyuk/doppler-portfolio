@@ -1,6 +1,6 @@
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.syndication.views import Feed
-from news.models import NewsItem
+from .models import NewsItem
 
 class NewsFeed(Feed):
 	title = _('Doppler studio news')

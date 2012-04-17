@@ -1,6 +1,6 @@
 from django.utils.translation import ugettext_lazy as _
 from django.contrib import admin
-from news.models import NewsItem
+from .models import NewsItem
 
 class NewsItemAdmin(admin.ModelAdmin):
 

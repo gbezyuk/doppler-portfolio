@@ -1,8 +1,8 @@
 from django.conf.urls.defaults import patterns, url
 from django.views.generic import list_detail
 from django.views.generic.simple import redirect_to, direct_to_template
-from news.models import NewsItem
-from news.feed import NewsFeed
+from .models import NewsItem
+from .feed import NewsFeed
 
 queryset = NewsItem.get_actual_news()
 
