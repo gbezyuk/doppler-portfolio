@@ -1,0 +1,166 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-04-17 15:18+0400\n"
+"PO-Revision-Date: 2012-04-17 15:10\n"
+"Last-Translator:   <gbezyuk@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"X-Translated-Using: django-rosetta 0.6.6\n"
+
+#: templates/404.haml:10 templates/404.haml.py:15
+msgid "Page not found"
+msgstr "Страница не найдена"
+
+#: templates/404.haml:17
+msgid "You are nowhere. Something gone wrong."
+msgstr "Вы попали на страницу, которой нет. Что-то пошло чудовищно не так."
+
+#: templates/base.haml:33 templates/home.haml:60
+msgid "Portfolio"
+msgstr "Портфолио"
+
+#: templates/base.haml:36 templates/home.haml:52 templates/home.haml.py:92
+msgid "News"
+msgstr "Новости"
+
+#: templates/base.haml:46
+msgid "You are logged in as "
+msgstr "Вы авторизованы как"
+
+#: templates/base.haml:53
+msgid "Logout"
+msgstr "Выйти"
+
+#: templates/base.haml:57
+msgid "login"
+msgstr "войти"
+
+#: templates/base.haml:75 templates/base.haml.py:86
+msgid "Login"
+msgstr "Войти"
+
+#: templates/base.haml:78
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: templates/base.haml:81
+msgid "Password"
+msgstr "Пароль"
+
+#: templates/base.haml:91
+msgid "Back to top"
+msgstr "К верху страницы"
+
+#: templates/home.haml:19
+msgid "Component"
+msgstr "Компонент"
+
+#: templates/home.haml:21
+msgid "Status"
+msgstr "Состояние"
+
+#: templates/home.haml:23
+msgid "Progress"
+msgstr "Прогресс"
+
+#: templates/home.haml:28
+msgid "Basic (Mobile version) layout"
+msgstr "Основной макет "
+
+#: templates/home.haml:30 templates/home.haml.py:38 templates/home.haml:46
+#: templates/home.haml.py:54
+msgid "Done"
+msgstr "Завершено"
+
+#: templates/home.haml:36
+msgid "Authorization"
+msgstr "Авторизация"
+
+#: templates/home.haml:44
+msgid "Flatpages"
+msgstr "Простые страницы"
+
+#: templates/home.haml:62
+msgid "Polishing"
+msgstr "Доводка"
+
+#: templates/home.haml:68
+msgid "Cleanup"
+msgstr "Очистка"
+
+#: templates/home.haml:70 templates/home.haml.py:78
+msgid "In progress"
+msgstr "Идёт работа"
+
+#: templates/home.haml:76
+msgid "Translation"
+msgstr "Перевод"
+
+#: templates/home.haml:83
+msgid "flatpages"
+msgstr "простые страницы"
+
+#: templates/home_link.haml:4
+msgid "Doppler Studio"
+msgstr "Студия \"Допплер\""
+
+#~ msgid "Games"
+#~ msgstr "Игры"
+
+#~ msgid "Plots"
+#~ msgstr "Сюжеты"
+
+#~ msgid "Forums"
+#~ msgstr "Форумы"
+
+#~ msgid "Profile"
+#~ msgstr "Профиль"
+
+#~ msgid "Private messages"
+#~ msgstr "Личные сообщения"
+
+#~ msgid "sign up"
+#~ msgstr "зарегистрироваться"
+
+#~ msgid "Sign up"
+#~ msgstr "Зарегистрироваться"
+
+#~ msgid "E-mail"
+#~ msgstr "E-mail"
+
+#~ msgid "Password repeat"
+#~ msgstr "Пароль (ещё раз)"
+
+#~ msgid "Alpha 1"
+#~ msgstr "&alpha;1"
+
+#~ msgid "Registration"
+#~ msgstr "Регистрация"
+
+#~ msgid "Not started"
+#~ msgstr "Не начато"
+
+#~ msgid "User profiles"
+#~ msgstr "Профили пользователей"
+
+#~ msgid "Theming"
+#~ msgstr "Оформление"
+
+#~ msgid "not started yet"
+#~ msgstr "ещё не начато"
+
+#~ msgid "Database migration"
+#~ msgstr "миграция БД"

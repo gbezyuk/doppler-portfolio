@@ -6,7 +6,6 @@
 - block sitewide_styles
 	%link{'rel': 'stylesheet', 'href':'{{ MEDIA_URL }}twitter_bootstrap/css/bootstrap.css', 'type': 'text/css'}
 	%link{'rel': 'stylesheet', 'href':'{{ MEDIA_URL }}jquery-lightbox/css/jquery.lightbox-0.5.css', 'type': 'text/css'}
-	-#%link{'rel': 'stylesheet', 'href':'{{ MEDIA_URL }}bootstrap-wysihtml5/src/bootstrap-wysihtml5.css', 'type': 'text/css'}
 	%link{'rel': 'stylesheet', 'href':'{{ MEDIA_URL }}css/doppler.css', 'type': 'text/css'}
 
 - block sitewide_scripts
@@ -14,9 +13,6 @@
 	%script{'type': 'text/javascript', 'src': '{{ MEDIA_URL }}twitter_bootstrap/js/bootstrap.js'}
 	%script{'type': 'text/javascript', 'src': '{{ MEDIA_URL }}jquery-lightbox/js/jquery.lightbox-0.5.js'}
 	%script{'type': 'text/javascript', 'src': '{{ MEDIA_URL }}js/jquery.transit.js'}
-	-#%script{'type': 'text/javascript', 'src': '{{ MEDIA_URL }}bootstrap-wysihtml5/lib/js/wysihtml5-0.3.0_rc2.js'}
-	-#%script{'type': 'text/javascript', 'src': '{{ MEDIA_URL }}bootstrap-wysihtml5/lib/js/prettify.js'}
-	-#%script{'type': 'text/javascript', 'src': '{{ MEDIA_URL }}bootstrap-wysihtml5/src/bootstrap-wysihtml5.js'}
 	%script{'type': 'text/javascript', 'src': '{{ MEDIA_URL }}js/global.js'}
 
 - block body
@@ -32,17 +28,6 @@
 					%i &beta;
 				.nav-collapse
 					%ul.nav
-						-#%li
-						-#	- include "home_link.haml"
-						-#%li
-						-#	%a{'href': '{% url games:index %}', 'class': '{% block games_link_class %}{% endblock %}'}
-						-#		{% trans "Games" %}
-						-#%li
-						-#	%a{'href': '{% url plots:index %}', 'class': '{% block plots_link_class %}{% endblock %}'}
-						-#		{% trans "Plots" %}
-						-#%li
-						-#	%a{'href': '{% url forum:index %}', 'class': '{% block forums_link_class %}{% endblock %}'}
-						-#		{% trans "Forums" %}
 						%li
 							%a{'href': '{% url portfolio_work_list %}', 'class': '{% block portfolio_link_class %}{% endblock %}'}
 								{% trans "Portfolio" %}
@@ -50,10 +35,6 @@
 							%a{'href': '{% url news:index %}', 'class': '{% block news_link_class %}{% endblock %}'}
 								{% trans "News" %}
 						- if flatpages
-							-#%li.dropdown
-							-#	%a#flatpages-dropdown-toggler.dropdown-toggle{'href': '{% url flatpages %}', 'class': '{% block flatpages_link_class %}{% endblock %}', 'data-toggle': 'dropdown'}
-							-#		{% trans "Flatpages" %}
-							-#	%ul.dropdown-menu
 							- for flatpage in flatpages
 								%li
 									%a{'href': '{{ flatpage.url }}'}
@@ -67,24 +48,13 @@
 								%strong
 									= request.user.username
 							%ul.dropdown-menu
-								-#%li
-								-#	%a{'href': '{% url profile %}'}
-								-#		{% trans "Profile" %}
-								-#%li
-								-#	%a{'href': '{% url pm:index %}'}
-								-#		{% trans "Private messages" %}
 								%li
 									%a{'href': '{% url auth:logout %}'}
 										{% trans "Logout" %}
 					- else
 						%li
-							-#%a{'href': '{% url auth:login %}'}
 							%a{'data-toggle': 'modal', 'href': '#loginModal'}
 								{% trans "login" %}
-						-#%li
-						-#	-#%a{'href': '{% url auth:login %}'}
-						-#	%a{'data-toggle': 'modal', 'href': '#signupModal'}
-						-#		{% trans "sign up" %}
 
 	.container
 		- block breadcrumbs
@@ -114,29 +84,6 @@
 				.modal-footer
 					%button.btn.btn-primary{'type': 'submit'}
 						{% trans "Login" %}
-		-#- block auth_modal
-		-#	%form#signupModal.modal.hide.fade.in.well{'method': 'POST', 'action': '{% url registration_register %}'}
-		-#		- csrf_token
-		-#		.modal-header
-		-#			%a.close{'data-dismiss': "modal"}×
-		-#			%h3
-		-#				{% trans "Sign up" %}
-		-#		.modal-body
-		-#			%label{'for': 'id_username'}
-		-#				{% trans "Username" %}:
-		-#			%input#id_username{'name': 'username', 'maxlength': '100', 'type': 'text'}
-		-#			%label{'for': 'id_email'}
-		-#				{% trans "E-mail" %}:
-		-#			%input#id_email{'name': 'email', 'maxlength': '100', 'type': 'text'}
-		-#			%label{'for': 'id_password1'}
-		-#				{% trans "Password" %}:
-		-#			%input#id_password1{'name': 'password1', 'maxlength': '100', 'type': 'password'}
-		-#			%label{'for': 'id_password2'}
-		-#				{% trans "Password repeat" %}:
-		-#			%input#id_password2{'name': 'password2', 'maxlength': '100', 'type': 'password'}
-		-#		.modal-footer
-		-#			%button.btn.btn-primary{'type': 'submit'}
-		-#				{% trans "Sign up" %}
 
 		%footer.footer
 			%p.pull-right
